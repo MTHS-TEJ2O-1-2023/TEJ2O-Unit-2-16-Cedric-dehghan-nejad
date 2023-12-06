@@ -11,9 +11,8 @@ let distanceToObject:number = 0
 radio.setGroup(76)
 basic.showIcon(IconNames.Happy)
 
-
-while (true) {
 // distanceToObject setup 
+input.onButtonPressed(Button.A, function() {
     basic.clearScreen()
     distanceToObject = sonar.ping(
         DigitalPin.P1,
@@ -28,12 +27,12 @@ while (true) {
         radio.sendString("hello universe")
 
       basic.showIcon(IconNames.Happy)
+    }
+})
 
 // radio.onReceivedString lets this microbit recieve strings from other microbits
     radio.onReceivedString(function (receivedString) {
-            basic.clearScreen()
-  basic.showString(receivedString)
-        })
-
-}
-}
+        basic.clearScreen()
+        basic.showString(receivedString)
+        basic.showIcon(IconNames.Happy)
+    })
