@@ -1,38 +1,37 @@
 /* Copyright (c) 2020 MTHS All rights reserved
  *
- * Created by: Mr. Coxall
- * Created on: Sep 2020
- * This program ...
+ * Created by: Cedric
+ * Created on: Dec 6 2023
+ * This program acts like bluetooth and transfers words from one microbit to another microbit
 */
+
 // variable
 let distanceToObject:number = 0
 
-// setup
 radio.setGroup(76)
 basic.showIcon(IconNames.Happy)
 
-// distanceToObject setup 
-input.onButtonPressed(Button.A, function() {
-    basic.clearScreen()
-    distanceToObject = sonar.ping(
-        DigitalPin.P1,
-        DigitalPin.P2,
-        PingUnit.Centimeters
-    )
-// if distanceToObject is <= 10 show hello world if more than 10 then show hello universe
-    if (distanceToObject <= 10){
-  radio.sendString("hello world")
+// distanceToObject setup
+input.onButtonPressed(Button.A, function () {
+  basic.clearScreen()
+  distanceToObject = sonar.ping(
+    DigitalPin.P1,
+    DigitalPin.P2,
+    PingUnit.Centimeters
+  )
+  // if distanceToObject is <= 10 show hello world if more than 10 then show hello universe
+  if (distanceToObject <= 10) {
+  radio.sendString('hello world')
+  } else {
+    radio.sendString('hello universe')
 
-    }else{
-        radio.sendString("hello universe")
-
-      basic.showIcon(IconNames.Happy)
-    }
+    basic.showIcon(IconNames.Happy)
+  }
 })
 
 // radio.onReceivedString lets this microbit recieve strings from other microbits
-    radio.onReceivedString(function (receivedString) {
-        basic.clearScreen()
-        basic.showString(receivedString)
-        basic.showIcon(IconNames.Happy)
+radio.onReceivedString(function (receivedString) {
+  basic.clearScreen()
+  basic.showString(receivedString)
+  basic.showIcon(IconNames.Happy)
     })
