@@ -6,7 +6,7 @@
 */
 
 // variable
-let distanceToObject:number = 0
+let distanceToObject: number = 0
 
 // setup
 radio.setGroup(76)
@@ -22,7 +22,7 @@ input.onButtonPressed(Button.A, function () {
   )
   // if distanceToObject is <= 10 show hello world if more than 10 then show hello universe
   if (distanceToObject <= 10) {
-  radio.sendString('hello world')
+    radio.sendString('hello world')
   } else {
     radio.sendString('hello universe')
 
@@ -35,4 +35,4 @@ radio.onReceivedString(function (receivedString) {
   basic.clearScreen()
   basic.showString(receivedString)
   basic.showIcon(IconNames.Happy)
-    })
+})
