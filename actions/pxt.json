@@ -1,0 +1,25 @@
+{
+    "name": "tej2o-unit-2-16-cedric-dehghan-nejad-actions",
+    "dependencies": {
+        "core": "*",
+        "radio": "*",
+        "microphone": "*",
+        "tej2o-unit-2-16-cedric-dehghan-nejad": "github:mths-tej2o-1-2023/tej2o-unit-2-16-cedric-dehghan-nejad"
+    },
+    "files": [
+        "main.blocks",
+        "main.ts",
+        "README.md"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "targetVersions": {
+        "target": "6.0.24",
+        "targetId": "microbit"
+    },
+    "supportedTargets": [
+        "microbit"
+    ],
+    "preferredEditor": "blocksprj"
+}
