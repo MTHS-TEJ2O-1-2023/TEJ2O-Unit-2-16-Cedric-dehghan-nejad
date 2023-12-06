@@ -22,7 +22,7 @@ input.onButtonPressed(Button.A, function () {
   )
   // if distanceToObject is <= 10 show hello world if more than 10 then show hello universe
   if (distanceToObject <= 10) {
-    radio.sendString('hello world')
+    radio.sendString('too close')
   } else {
     radio.sendString('hello universe')
 
