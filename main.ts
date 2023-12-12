@@ -7,10 +7,9 @@
 
 // variable
 let distanceToObject: number = 0
-let distanceFromObject = 0
 
 // setup
-radio.setGroup(76)
+radio.setGroup(7)
 basic.showIcon(IconNames.Happy)
 
 // distanceToObject setup
@@ -25,23 +24,13 @@ input.onButtonPressed(Button.A, function () {
   if (distanceToObject <= 10) {
     radio.sendString('too close')
   } else {
-    radio.sendString('hello universe')
+    radio.sendString('too far')
 
     basic.showIcon(IconNames.Happy)
   }
 })
-    // waiting for string from other microbit
-radio.onReceivedNumber(function (receivedNumber) {
+    radio.onReceivedString(function (receivedString) {
     basic.clearScreen()
-    basic.showString(`${ receivedNumber } cm`)
-    distanceFromObject = receivedNumber
-
-    // if distanceFromObject is less then or equal to 10 display to close if not dislay ok
-    if (distanceFromObject <= 10) {
-        basic.showString('To close.')
-    } else {
-        basic.showString('Good.')
-    }
-    basic.pause(500)
+    basic.showString(receivedString)
     basic.showIcon(IconNames.Happy)
 })
