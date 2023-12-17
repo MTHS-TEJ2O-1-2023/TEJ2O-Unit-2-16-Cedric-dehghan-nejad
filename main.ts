@@ -34,3 +34,4 @@ input.onButtonPressed(Button.A, function () {
     basic.showString(receivedString)
     basic.showIcon(IconNames.Happy)
 })
+
